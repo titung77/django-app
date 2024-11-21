@@ -1,0 +1,25 @@
+<h2>List of Questions</h2>
+<table>
+<tr>
+<th>Question</th>
+<th>Subject</th>
+<th>Difficulty</th>
+<th>Type</th>
+<th>CLO</th>
+<th>Actions</th>
+</tr>
+{% for question in questions %}
+<tr>
+<td>{{ question.text }}</td>
+<td>{{ question.subject }}</td>
+<td>{{ question.difficulty }}</td>
+<td>{{ question.question_type }}</td>
+<td>{{ question.clo }}</td>
+<td>
+<a href="{% url 'edit_question' question.pk %}">Edit</a> |
+<a href="{% url 'delete_question' question.pk %}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+<a href="{% url 'add_question' %}">Add New Question</a>

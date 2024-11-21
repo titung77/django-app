@@ -1,0 +1,7 @@
+<h2>Are you sure you want to delete this question?</h2>
+<p>{{ question.text }}</p>
+<form method="post">
+{% csrf_token %}
+<button type="submit">Yes, delete</button>
+</form>
+<a href="{% url 'list_questions' %}">Cancel</a>
